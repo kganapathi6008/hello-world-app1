@@ -1,3 +1,4 @@
 server:
   servlet:
-    context-path: /java-application-1
+    context-path: /
+    #context-path: /java-application-1
