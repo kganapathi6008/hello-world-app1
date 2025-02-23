@@ -31,5 +31,11 @@ class AppTest {
         String response = this.restTemplate.getForObject("http://localhost:" + port + contextPath + "/", String.class);
         assertThat(response).isEqualTo("Hello, World from Spring Boot!");
     }
-}
 
+    @Test
+    void healthEndpointShouldReturnHealthy() {
+        String contextPath = environment.getProperty("server.servlet.context-path", "");
+        String response = this.restTemplate.getForObject("http://localhost:" + port + contextPath + "/health", String.class);
+        assertThat(response).isEqualTo("Application is healthy!");
+    }
+}

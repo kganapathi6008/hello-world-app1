@@ -25,4 +25,10 @@ class HelloController {
         logger.info("Received request for / endpoint");
         return "Hello, World from Spring Boot!";
     }
+
+    @GetMapping("/health")
+    public String health() {
+        logger.info("Received request for /health endpoint");
+        return "Application is healthy!";
+    }
 }
